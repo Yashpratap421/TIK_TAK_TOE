@@ -1,3 +1,6 @@
+let sound = new Audio("click.mp3")
+let soundend = new Audio("win.mp3")
+
 let turn = "X";
 var t =30;
 var flag=0;
@@ -13,6 +16,7 @@ Array.from(boxs).forEach(element => {
              turn = Playerturn();
              document.querySelector("h2").textContent=turn;
              flag= flag +1;
+             sound.play();
              if(flag === 9)
                 {
                     document.querySelector("button").style.opacity=  "8"; 
@@ -59,6 +63,7 @@ var box =document.querySelectorAll("td");
                        document.querySelector("button").style.opacity=  "8";
                     //    document.querySelector("table").style.opacity= "0";
                        turn="";
+                       soundend.play();
 
 
                     };
